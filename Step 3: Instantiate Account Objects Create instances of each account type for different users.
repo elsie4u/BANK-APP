@@ -1,0 +1,5 @@
+# Creating account instances
+savings_account = SavingsAccount("Alice")
+current_account = CurrentAccount("Bob")
+childrens_account = ChildrensAccount("Charlie")
+student_account = StudentAccount("Dave")
