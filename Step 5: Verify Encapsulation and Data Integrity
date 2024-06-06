@@ -1,0 +1,18 @@
+Ensure that the account balances are updated correctly and that the data is protected.
+# Verifying balances
+print(f"Savings Account Balance: {savings_account.get_balance()}")
+print(f"Current Account Balance: {current_account.get_balance()}")
+print(f"Children's Account Balance: {childrens_account.get_balance()}")
+print(f"Student Account Balance: {student_account.get_balance()}")
+
+# Print account details
+print(savings_account)
+print(current_account)
+print(childrens_account)
+print(student_account)
+
+# Attempting direct access to private variables (should not be done)
+try:
+    print(savings_account._balance)  # Not recommended; for demonstration only
+except AttributeError as e:
+    print(e)
