@@ -1,0 +1,49 @@
+# Step 2: Define derived classes for Each Account Type
+# Extend the account class to create specific types of accounts with custom deposit and withdrawal rules
+
+
+class SavingsAccount(Account):
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount * 1.005  # 0.5% interest
+            print(f"Deposited {amount} with interest. New balance: {self._balance}")
+        else:
+            print("Invalid deposit amount")
+    
+    def withdraw(self, amount):
+        if amount > 0 and amount <= self._balance and amount <= 700000:
+            self._balance -= amount
+            print(f"Withdrew {amount}. New balance: {self._balance}")
+        else:
+            print("Invalid amount or withdrawal limit exceeded")
+
+class CurrentAccount(Account):
+    # No restrictions, inherit directly
+    pass
+
+class ChildrensAccount(Account):
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount * 1.007  # 0.7% interest
+            print(f"Deposited {amount} with interest. New balance: {self._balance}")
+        else:
+            print("Invalid deposit amount")
+    
+    def withdraw(self, amount):
+        print("Withdrawals not allowed from Children's account")
+
+class StudentAccount(Account):
+    def deposit(self, amount):
+        if amount > 0 and amount <= 50000:
+            self._balance += amount
+            print(f"Deposited {amount}. New balance: {self._balance}")
+        else:
+            print("Invalid deposit amount or deposit limit exceeded")
+    
+    def withdraw(self, amount):
+        if amount > 0 and amount <= self._balance and amount <= 2000:
+            self._balance -= amount
+            print(f"Withdrew {amount}. New balance: {self._balance}")
+        else:
+            print("Invalid amount or withdrawal limit exceeded")
+   
