@@ -1,4 +1,4 @@
-#Create a general account class to serve as the base for the different types of accounts.
+Create a general account class to serve as the base for the different types of accounts.
 class Account:
     def __init__(self, account_holder, balance=0):
         self._account_holder = account_holder
