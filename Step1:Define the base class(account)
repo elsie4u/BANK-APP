@@ -1,0 +1,25 @@
+#Create a general account class to serve as the base for the different types of accounts.
+class Account:
+    def __init__(self, account_holder, balance=0):
+        self._account_holder = account_holder
+        self._balance = balance
+    
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited {amount}. New balance: {self._balance}")
+        else:
+            print("Invalid deposit amount")
+
+    def withdraw(self, amount):
+        if amount > 0 and amount <= self._balance:
+            self._balance -= amount
+            print(f"Withdrew {amount}. New balance: {self._balance}")
+        else:
+            print("Invalid or insufficient funds for withdrawal")
+
+    def get_balance(self):
+        return self._balance
+
+    def __str__(self):
+        return f"Account holder: {self._account_holder}, Balance: {self._balance}"
