@@ -1,0 +1,16 @@
+Execute deposit and withdrawal operations to demonstrate the functionality of each account type.
+# Transactions for Savings Account
+savings_account.deposit(1000)
+savings_account.withdraw(500)
+
+# Transactions for Current Account
+current_account.deposit(1000)
+current_account.withdraw(2000)
+
+# Transactions for Children's Account
+childrens_account.deposit(1000)
+childrens_account.withdraw(500)  # Should print a message that withdrawals are not allowed
+
+# Transactions for Student Account
+student_account.deposit(40000)
+student_account.withdraw(1000)
